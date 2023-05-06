@@ -2,6 +2,47 @@
 <html dir="rtl">
   <head>
     <title>הרמז</title>
+	
+	<<style>
+      /* Hide the default checkbox */
+      input[type="checkbox"] {
+        display: none;
+      }
+      
+      label.checkbox {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 3px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 44px;
+        font-weight: bold;
+        font-size: 28px;
+        color: #ccc;
+      }
+      
+      /* Style the label as a checkbox with an X when it is checked */
+      input[type="checkbox"]:checked + label.checkbox {
+        background-color: #cc0000;
+        border-color: #cc0000;
+        color: white;
+      }
+	  
+	  input[type="text"] {
+        width: 300px;
+        height: 40px;
+        font-size: 24px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 2px solid #ccc;
+      }
+	  
+	  label {
+        font-size: 24px;
+      }
+    </style>
   </head>
   <body>
   
@@ -9,72 +50,125 @@
   <br><br>
   
   
+     <input type="checkbox" id="leb1_checkbox" name="leb1_checkbox">
+    <label for="leb1_checkbox" class="checkbox">X</label>
     <label for="leb1">גרין:</label>
-    <input type="text" id="leb1" name="leb1"><br><br>
+    <input type="text" id="leb1" name="leb1" ><br><br>
+	
+	
+    <!-- חרדלי input group -->
+<input type="checkbox" id="leb2_checkbox" name="leb2_checkbox">
+<label for="leb2_checkbox" class="checkbox">X</label>
+<label for="leb2">חרדלי:</label>
+<input type="text" id="leb2" name="leb2" style="font-size: 16px;"><br><br>
+
+<!-- אורכידאה input group -->
+<input type="checkbox" id="leb3_checkbox" name="leb3_checkbox">
+<label for="leb3_checkbox" class="checkbox">X</label>
+<label for="leb3">אורכידאה:</label>
+<input type="text" id="leb3" name="leb3" style="font-size: 16px;"><br><br>
+
+<!-- רקיע input group -->
+<input type="checkbox" id="leb4_checkbox" name="leb4_checkbox">
+<label for="leb4_checkbox" class="checkbox">X</label>
+<label for="leb4">רקיע:</label>
+<input type="text" id="leb4" name="leb4" style="font-size: 16px;"><br><br>
+
+<!-- שזיפי input group -->
+<input type="checkbox" id="leb5_checkbox" name="leb5_checkbox">
+<label for="leb5_checkbox" class="checkbox">X</label>
+<label for="leb5">שזיפי:</label>
+<input type="text" id="leb5" name="leb5" style="font-size: 16px;"><br><br>
+
+<!-- שני input group -->
+<input type="checkbox" id="leb6_checkbox" name="leb6_checkbox">
+<label for="leb6_checkbox" class="checkbox">X</label>
+<label for="leb6">שני:</label>
+<input type="text" id="leb6" name="leb6" style="font-size: 16px;"><br><br>
+
     
-    <label for="leb2">חרדלי:</label>
-    <input type="text" id="leb2" name="leb2"><br><br>
     
-    <label for="leb3">אורכידאה:</label>
-    <input type="text" id="leb3" name="leb3"><br><br>
-    
-    <label for="leb4">רקיע:</label>
-    <input type="text" id="leb4" name="leb4"><br><br>
-    
-    <label for="leb5">שזיפי:</label>
-    <input type="text" id="leb5" name="leb5"><br><br>
-    
-    <label for="leb6">שני:</label>
-    <input type="text" id="leb6" name="leb6"><br><br>
 	
 	<br><br>
     
-    <label for="leb7">פמוט:</label>
-    <input type="text" id="leb7" name="leb7"><br><br>
-    
-    <label for="leb8">פגיון:</label>
-    <input type="text" id="leb8" name="leb8"><br><br>
-    
-    <label for="leb9">מוט ברזל:</label>
-    <input type="text" id="leb9" name="leb9"><br><br>
-    
-    <label for="leb10">אקדח:</label>
-    <input type="text" id="leb10" name="leb10"><br><br>
-    
-    <label for="leb11">חבל:</label>
-    <input type="text" id="leb11" name="leb11"><br><br>
-    
-    <label for="leb12">מפתח צינורות:</label>
-    <input type="text" id="leb12" name="leb12"><br><br>
+    <input type="checkbox" id="leb100_checkbox" name="leb100_checkbox">
+<label for="leb100_checkbox" class="checkbox-large">X</label>
+<label for="leb100" class="label-large">פמוט:</label>
+<input type="text" id="leb100" name="leb100" class="text-large"><br><br>
+
+<input type="checkbox" id="leb101_checkbox" name="leb101_checkbox">
+<label for="leb101_checkbox" class="checkbox-large">X</label>
+<label for="leb101" class="label-large">פגיון:</label>
+<input type="text" id="leb101" name="leb101" class="text-large"><br><br>
+
+<input type="checkbox" id="leb102_checkbox" name="leb102_checkbox">
+<label for="leb102_checkbox" class="checkbox-large">X</label>
+<label for="leb102" class="label-large">מוט ברזל:</label>
+<input type="text" id="leb102" name="leb102" class="text-large"><br><br>
+
+<input type="checkbox" id="leb103_checkbox" name="leb103_checkbox">
+<label for="leb103_checkbox" class="checkbox-large">X</label>
+<label for="leb103" class="label-large">אקדח:</label>
+<input type="text" id="leb103" name="leb103" class="text-large"><br><br>
+
+<input type="checkbox" id="leb104_checkbox" name="leb104_checkbox">
+<label for="leb104_checkbox" class="checkbox-large">X</label>
+<label for="leb104" class="label-large">חבל:</label>
+<input type="text" id="leb104" name="leb104" class="text-large"><br><br>
+
+<input type="checkbox" id="leb105_checkbox" name="leb105_checkbox">
+<label for="leb105_checkbox" class="checkbox-large">X</label>
+<label for="leb105" class="label-large">מפתח צינורות:</label>
+<input type="text" id="leb105" name="leb105" class="text-large"><br><br>
+
 	
 	<br><br>
     
-    <label for="leb13">אולם נשפים:</label>
-    <input type="text" id="leb13" name="leb13"><br><br>
-    
-    <label for="leb14">חדר ביליארד:</label>
-    <input type="text" id="leb14" name="leb14"><br><br>
-    
-    <label for="leb15">חממה:</label>
-    <input type="text" id="leb15" name="leb15"><br><br>
-    
-    <label for="leb16">חדר אוכל:</label>
-    <input type="text" id="leb16" name="leb16"><br><br>
-	
-	<label for="leb17">מסדרון:</label>
-    <input type="text" id="leb17" name="leb17"><br><br>
-	
-	<label for="leb18">מטבח:</label>
-    <input type="text" id="leb18" name="leb18"><br><br>
-	
-	<label for="leb19">ספרייה:</label>
-    <input type="text" id="leb19" name="leb19"><br><br>
-	
-	<label for="leb20">סלון:</label>
-    <input type="text" id="leb20" name="leb20"><br><br>
-	
-	<label for="leb21">חדר עבודה:</label>
-    <input type="text" id="leb21" name="leb21"><br><br>
+    <input type="checkbox" id="leb201_checkbox" name="leb201_checkbox">
+<label for="leb201_checkbox" class="checkbox">X</label>
+<label for="leb201" class="label">אולם נשפים:</label>
+<input type="text" id="leb201" name="leb201" class="text"><br><br>
+
+<input type="checkbox" id="leb202_checkbox" name="leb202_checkbox">
+<label for="leb202_checkbox" class="checkbox">X</label>
+<label for="leb202" class="label">חדר ביליארד:</label>
+<input type="text" id="leb202" name="leb202" class="text"><br><br>
+
+<input type="checkbox" id="leb203_checkbox" name="leb203_checkbox">
+<label for="leb203_checkbox" class="checkbox">X</label>
+<label for="leb203" class="label">חממה:</label>
+<input type="text" id="leb203" name="leb203" class="text"><br><br>
+
+<input type="checkbox" id="leb204_checkbox" name="leb204_checkbox">
+<label for="leb204_checkbox" class="checkbox">X</label>
+<label for="leb204" class="label">חדר אוכל:</label>
+<input type="text" id="leb204" name="leb204" class="text"><br><br>
+
+<input type="checkbox" id="leb205_checkbox" name="leb205_checkbox">
+<label for="leb205_checkbox" class="checkbox">X</label>
+<label for="leb205" class="label">מסדרון:</label>
+<input type="text" id="leb205" name="leb205" class="text"><br><br>
+
+<input type="checkbox" id="leb206_checkbox" name="leb206_checkbox">
+<label for="leb206_checkbox" class="checkbox">X</label>
+<label for="leb206" class="label">מטבח:</label>
+<input type="text" id="leb206" name="leb206" class="text"><br><br>
+
+<input type="checkbox" id="leb207_checkbox" name="leb207_checkbox">
+<label for="leb207_checkbox" class="checkbox">X</label>
+<label for="leb207" class="label">ספרייה:</label>
+<input type="text" id="leb207" name="leb207" class="text"><br><br>
+
+<input type="checkbox" id="leb208_checkbox" name="leb208_checkbox">
+<label for="leb208_checkbox" class="checkbox">X</label>
+<label for="leb208" class="label">סלון:</label>
+<input type="text" id="leb208" name="leb208" class="text"><br><br>
+
+<input type="checkbox" id="leb209_checkbox" name="leb209_checkbox">
+<label for="leb209_checkbox" class="checkbox">X</label>
+<label for="leb209" class="label">חדר עבודה:</label>
+<input type="text" id="leb209" name="leb209" class="text"><br><br>
+
 
     
 
