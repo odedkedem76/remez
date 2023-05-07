@@ -50,6 +50,38 @@
 	  select {
     font-size: 36px;
   }
+  
+  .checkboxV {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.checked .checkboxV:after {
+  content: "✔";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  text-align: center;
+  background-color: white;
+  color: green;
+  font-weight: bold;
+}
+
+
+.unchecked .checkboxV:after {
+  content: "";
+  display: none;
+}
+
+
     </style>
   </head>
   <body>
@@ -60,7 +92,12 @@
   <fieldset style="border: 2px solid red; width: 500px;">
   <legend>חשודים</legend>
   
+  <div id="vvvv1" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
+  
   <div style="display: flex; align-items: center;">
+  
   <img src="green.png" width="64" height="64">
   <input type="checkbox" id="leb1_checkbox" name="leb1_checkbox">
     <label for="leb1_checkbox" class="checkbox">X</label>
@@ -71,6 +108,9 @@
 	
 	
     <!-- חרדלי input group -->
+	<div id="vvvv2" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="mustard.png" width="64" height="64">
 <input type="checkbox" id="leb2_checkbox" name="leb2_checkbox">
@@ -82,6 +122,9 @@
 
 
 <!-- אורכידאה input group -->
+<div id="vvvv3" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="orchid.png" width="64" height="64">
 <input type="checkbox" id="leb3_checkbox" name="leb3_checkbox">
@@ -92,6 +135,9 @@
 <br><br>
 
 <!-- רקיע input group -->
+<div id="vvvv4" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="rakia.png" width="64" height="64">
 <input type="checkbox" id="leb4_checkbox" name="leb4_checkbox">
@@ -102,6 +148,9 @@
 <br><br>
 
 <!-- שזיפי input group -->
+<div id="vvvv5" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="plum.png" width="64" height="64">
 <input type="checkbox" id="leb5_checkbox" name="leb5_checkbox">
@@ -112,6 +161,9 @@
 <br><br>
 
 <!-- שני input group -->
+<div id="vvvv6" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="shani.png" width="64" height="64">
 <input type="checkbox" id="leb6_checkbox" name="leb6_checkbox">
@@ -129,6 +181,9 @@
 	<fieldset style="border: 2px solid green; width: 500px;">
   <legend>כלי נשק</legend>
     
+	<div id="vvvv7" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 	<div style="display: flex; align-items: center;">
   <img src="candlestick.png" width="64" height="64">
     <input type="checkbox" id="leb100_checkbox" name="leb100_checkbox">
@@ -138,7 +193,9 @@
 </div>
 <br><br>
 
-
+<div id="vvvv8" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="dagger.png" width="64" height="64">
 <input type="checkbox" id="leb101_checkbox" name="leb101_checkbox">
@@ -148,7 +205,9 @@
 </div>
 <br><br>
 
-
+<div id="vvvv9" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="pipe.png" width="64" height="64">
 <input type="checkbox" id="leb102_checkbox" name="leb102_checkbox">
@@ -158,7 +217,9 @@
 </div>
 <br><br>
 
-
+<div id="vvvv10" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="gun.png" width="64" height="64">
 <input type="checkbox" id="leb103_checkbox" name="leb103_checkbox">
@@ -168,6 +229,9 @@
 </div>
 <br><br>
 
+<div id="vvvv11" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="rope.png" width="64" height="64">
 <input type="checkbox" id="leb104_checkbox" name="leb104_checkbox">
@@ -177,6 +241,9 @@
 </div>
 <br><br>
 
+<div id="vvvv12" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="wrench.png" width="64" height="64">
 <input type="checkbox" id="leb105_checkbox" name="leb105_checkbox">
@@ -194,6 +261,9 @@
 	<fieldset style="border: 2px solid blue; width: 500px;">
   <legend>חדרים</legend>
     
+	<div id="vvvv13" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 	<div style="display: flex; align-items: center;">
   <img src="ballroom.jpg" width="64" height="64">
     <input type="checkbox" id="leb201_checkbox" name="leb201_checkbox">
@@ -203,6 +273,9 @@
 </div>
 <br><br>
 
+<div id="vvvv14" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="billiard.jpg" width="64" height="64">
 <input type="checkbox" id="leb202_checkbox" name="leb202_checkbox">
@@ -212,6 +285,9 @@
 </div>
 <br><br>
 
+<div id="vvvv15" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="greenhouse.jpg" width="64" height="64">
 <input type="checkbox" id="leb203_checkbox" name="leb203_checkbox">
@@ -221,7 +297,9 @@
 </div>
 <br><br>
 
-
+<div id="vvvv16" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="dining.jpg" width="64" height="64">
 <input type="checkbox" id="leb204_checkbox" name="leb204_checkbox">
@@ -231,7 +309,9 @@
 </div>
 <br><br>
 
-
+<div id="vvvv17" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="misdaron.jpg" width="64" height="64">
 <input type="checkbox" id="leb205_checkbox" name="leb205_checkbox">
@@ -241,6 +321,9 @@
 </div>
 <br><br>
 
+<div id="vvvv18" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="kitchen.jpg" width="64" height="64">
 <input type="checkbox" id="leb206_checkbox" name="leb206_checkbox">
@@ -250,6 +333,9 @@
 </div>
 <br><br>
 
+<div id="vvvv19" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="library.jpg" width="64" height="64">
 <input type="checkbox" id="leb207_checkbox" name="leb207_checkbox">
@@ -259,6 +345,9 @@
 </div>
 <br><br>
 
+<div id="vvvv20" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="salon.jpg" width="64" height="64">
 <input type="checkbox" id="leb208_checkbox" name="leb208_checkbox">
@@ -268,6 +357,9 @@
 </div>
 <br><br>
 
+<div id="vvvv21" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
 <div style="display: flex; align-items: center;">
   <img src="workroom.jpg" width="64" height="64">
 <input type="checkbox" id="leb209_checkbox" name="leb209_checkbox">
@@ -776,6 +868,33 @@
 	<br><br>
 
 
+<script>
+	
+	function toggleCheckboxState(checkboxDiv) {
+  if (checkboxDiv.classList.contains("unchecked")) {
+    checkboxDiv.classList.remove("unchecked");
+    checkboxDiv.classList.add("checked");
+  } else {
+    checkboxDiv.classList.remove("checked");
+    checkboxDiv.classList.add("unchecked");
+  }
+}
+
+
+      
+// Get all elements whose ID starts with "vvvv"
+var vvvvElements = document.querySelectorAll('[id^="vvvv"]');
+
+// Add event listener to each element
+vvvvElements.forEach(function(element) {
+  element.addEventListener("click", function() { 
+    toggleCheckboxState(element); 
+  });
+});
+
+
+
+</script>
     
 </body>
 </html>
