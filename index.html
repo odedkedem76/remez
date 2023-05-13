@@ -84,6 +84,10 @@
   display: none;
 }
 
+button {
+			font-size: 24px;
+			padding: 12px 24px;
+		}
 
     </style>
   </head>
@@ -91,6 +95,8 @@
   
   <h1>הרמז</h1>
   <br><br>
+  
+  
   
   <fieldset style="border: 2px solid red; width: 500px;">
   <legend>חשודים</legend>
@@ -378,6 +384,8 @@
 	<br><br>
 	<br><br>
 	<br><br>
+	<button onclick="clear_pressed()">נקה</button>
+  <br><br>
 	<br><br>
 	<br><br>
 	<br><br>
@@ -895,6 +903,62 @@ vvvvElements.forEach(function(element) {
   });
 });
 
+
+// Get all the checkbox input items in the page
+var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+// Iterate over all the checkbox input items and add the toggle function to them
+for (var i = 0; i < checkboxes.length; i++) {
+  var checkbox = checkboxes[i];
+  
+  var id = checkbox.id;
+  //alert("found id " + id);
+  
+  // Retrieve the checkbox state from local storage
+  var isChecked = localStorage.getItem(id);
+  // Set the checkbox state if it exists in local storage
+  if (isChecked === "true") {
+	document.getElementById(id).checked = true;
+  }
+  
+
+  // Add the toggle function to the checkbox input item
+  checkbox.addEventListener('change', function() {
+	localStorage.setItem(this.id, this.checked);	
+  });
+}
+
+// get all the text inputs
+var textInputs = document.querySelectorAll('input[type="text"]');
+for (var i = 0; i < textInputs.length; i++) {
+  var input = textInputs[i];
+  var id = input.id;
+  var txt = localStorage.getItem(id);
+  input.value = txt;
+  
+  // Add an event listener for the input event
+  input.addEventListener('input', function() {
+    localStorage.setItem(this.id, this.value);
+  });
+}
+
+function clear_pressed() {
+			
+	var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+	for (var i = 0; i < checkboxes.length; i++) {
+	  var checkbox = checkboxes[i];  	  
+	  checkbox.checked = false;
+	  localStorage.setItem(checkbox.id, "false");		  
+	}
+	
+	var textInputs = document.querySelectorAll('input[type="text"]');
+	for (var i = 0; i < textInputs.length; i++) {
+	  var input = textInputs[i];
+	  input.value = "";
+	  localStorage.setItem(input.id, "");	  	 
+    }
+			
+}
 
 
 </script>
