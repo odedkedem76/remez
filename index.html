@@ -53,8 +53,8 @@
   
   .checkboxV {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   border: 1px solid black;
   position: relative;
 }
@@ -67,14 +67,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  line-height: 10px;
+  width: 32px;
+  height: 32px;
+  line-height: 24px;
   text-align: center;
   background-color: white;
   color: green;
   font-weight: bold;
   -webkit-text-stroke: 1px green;
+  font-size: 32px;
 }
 
 
@@ -885,9 +886,12 @@ button {
   if (checkboxDiv.classList.contains("unchecked")) {
     checkboxDiv.classList.remove("unchecked");
     checkboxDiv.classList.add("checked");
+	localStorage.setItem(checkboxDiv.id, "true");
+		
   } else {
     checkboxDiv.classList.remove("checked");
-    checkboxDiv.classList.add("unchecked");
+    checkboxDiv.classList.add("unchecked");	
+	localStorage.setItem(checkboxDiv.id, "false");
   }
 }
 
@@ -898,6 +902,14 @@ var vvvvElements = document.querySelectorAll('[id^="vvvv"]');
 
 // Add event listener to each element
 vvvvElements.forEach(function(element) {
+  var id = element.id;  
+  var isChecked = localStorage.getItem(id);
+  // Set the checkbox state if it exists in local storage
+  if (isChecked === "true") {
+	element.classList.remove("unchecked");
+    element.classList.add("checked");
+  }
+  
   element.addEventListener("click", function() { 
     toggleCheckboxState(element); 
   });
@@ -957,6 +969,19 @@ function clear_pressed() {
 	  input.value = "";
 	  localStorage.setItem(input.id, "");	  	 
     }
+	
+	var vvvvElements = document.querySelectorAll('[id^="vvvv"]');
+	vvvvElements.forEach(function(element) {
+	  if (element.classList.contains("unchecked")) {
+				
+		} else {
+		element.classList.remove("checked");
+		element.classList.add("unchecked");	
+		localStorage.setItem(element.id, "false");
+	  }
+	  
+	  
+	});
 			
 }
 
