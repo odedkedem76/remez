@@ -3,6 +3,10 @@
   <head>
     <title>הרמז</title>
 	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+	
 	<<style>
       /* Hide the default checkbox */
       input[type="checkbox"] {
@@ -385,7 +389,35 @@ button {
 	<br><br>
 	<br><br>
 	<br><br>
-	<button onclick="clear_pressed()">נקה</button>
+	<button id="open-dialog" >נקה</button>
+	
+	<div id="dialog" title="Confirmation" style="display:none;">
+  <p>לנקות???</p>
+</div>
+
+<script>
+$(document).ready(function() {
+  $("#open-dialog").on("click", function() {
+    $("#dialog").dialog({
+      modal: true,
+      buttons: {
+        "כן": function() {
+          // Handle OK button click
+          $(this).dialog("close");
+		  clear_pressed();
+        },
+        "לא": function() {
+          // Handle Cancel button click
+          $(this).dialog("close");		  
+        }
+      }
+    });
+    $("#dialog").show(); // show the dialog box after it is created
+  });
+});
+</script>
+
+
   <br><br>
 	<br><br>
 	<br><br>
