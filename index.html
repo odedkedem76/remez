@@ -8,44 +8,10 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 	
 	<<style>
-      /* Hide the default checkbox */
-      input[type="checkbox"] {
-        display: none;
-      }
       
-      label.checkbox {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border: 3px solid #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-        text-align: center;
-        line-height: 44px;
-        font-weight: bold;
-        font-size: 28px;
-        color: #ccc;
-      }
       
-      /* Style the label as a checkbox with an X when it is checked */
-      input[type="checkbox"]:checked + label.checkbox {
-        background-color: #cc0000;
-        border-color: #cc0000;
-        color: white;
-      }
-	  
-	  input[type="text"] {
-        width: 300px;
-        height: 40px;
-        font-size: 24px;
-        padding: 5px;
-        border-radius: 4px;
-        border: 2px solid #ccc;
-      }
-	  
-	  label {
-        font-size: 24px;
-      }
+      
+      
 	  
 	  table, th, td {
         font-size: 40px;
@@ -93,14 +59,129 @@ button {
 			font-size: 24px;
 			padding: 12px 24px;
 		}
+		
+		.square {
+			position: relative;
+			  display: inline-block;
+			  width: 15vw;
+			  height: 15vw;
+			  border: 3px solid #ccc; /* add border */
+			  margin-right: 20px;
+			  margin-bottom: 20px;
+			  background-color: transparent; /* set background to transparent */
+			  cursor: pointer;
+		}
 
-    </style>
+		.square img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			cursor: pointer; /* add cursor */	
+		-webkit-user-select: none; /* Chrome, Safari, Opera */
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* IE 10+ */
+		user-select: none; /* Standard syntax */			
+		}
+		
+		
+		.my-label {
+  font-size: 4vw; /* default font size */
+}
+
+/* adjust font size based on screen width */
+@media screen and (min-width: 400px) {
+  /* 4 letter word takes 10% of screen width */
+  .my-label {
+    font-size: 6vw;
+  }
+}
+
+.my-input {
+  font-size: 4vw; /* default font size */
+  width: 80%; /* default width */
+}
+
+/* adjust font size and width based on screen width */
+@media screen and (min-width: 400px) {
+  /* 4 letter word takes 10% of screen width */
+  .my-input {
+    font-size: 5vw;
+    width: 40%;
+  }
+}
+
+	</style>
+
+    
   </head>
   <body>
   
   <h1>הרמז</h1>
   <br><br>
   
+  <fieldset style="border: 2px solid red; width: 95vw; position: relative">
+  <legend>2חשודים</legend>
+  
+  <div id="vvvv1" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
+  
+  <div style="display: flex; align-items: center; width: 100%; position: relative">  
+  
+  <img src="green.png" style="width: 20%; aspect-ratio: 1 / 1; " onclick="manualCheck('leb1_checkbox')">  
+  
+  <div class="square" id="cb1">
+		<img src="x.png" >
+	</div>
+    
+    <label for="leb1" class="my-label">גרין:</label>
+    <input type="text" id="leb1" name="leb1" class="my-input">
+</div>
+
+<br><br>
+
+  <div id="vvvv1" class="unchecked">
+      <span class="checkboxV"></span>
+  </div>
+  
+  <div style="display: flex; align-items: center; width: 100%; position: relative">  
+  <div style="display: flex; align-items: center; width: 100%;">  
+  <img src="green.png" style="width: 20%; aspect-ratio: 1 / 1; " onclick="manualCheck('leb1_checkbox')">  
+  
+  <div class="square" id="cb2">
+		<img src="x.png" >
+	</div>
+    
+    <label for="leb1" class="my-label">גרין:</label>
+    <input type="text" id="leb1" name="leb1" class="my-input">
+</div>
+
+
+
+</fieldset>
+
+<script>
+
+cbs = document.querySelectorAll("div[id^='cb']");
+cbs.forEach((dv) => {  
+ 
+ dv.querySelector("img").style.display = "none";
+  dv.addEventListener("click", () => {
+  const img = dv.querySelector("img");
+  
+    if (img.style.display === "none") {
+      img.style.display = "block";
+    } else {
+      img.style.display = "none";
+    }
+	
+  });
+});
+
+</script>
   
   
   <fieldset style="border: 2px solid red; width: 500px;">
