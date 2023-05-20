@@ -1,0 +1,51 @@
+/* Modal Styles */
+.cleanup-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cleanup-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+}
+
+.cleanup-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cleanup-close:hover,
+.cleanup-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cleanup-button-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.cleanup-large-button {
+  padding: 15px 30px;
+  font-size: 20px;
+}
+
+.cleanup-large-text {
+  font-size: 30px;
+  margin-bottom: 20px;
+}

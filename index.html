@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="cleanup.css">
 	
 	<style>
       
@@ -117,6 +118,20 @@ button {
   width: 20%;
   aspect-ratio: 1 / 1;
 }
+
+#dialog {
+    max-width: 100%;
+    width: auto !important;
+  }
+
+  #dialog p {
+    font-size: 16px;
+  }
+
+  .ui-dialog .ui-dialog-buttonpane .ui-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 
 	</style>
 
@@ -250,34 +265,29 @@ cbs.forEach((dv) => {
 
 </script>
   
+  <div id="myModal" class="cleanup-modal">
+    <div class="cleanup-modal-content">
+      <span class="cleanup-close" onclick="closeCleanupModal()">&times;</span>
+      <div class="cleanup-large-text">לנקות???</div>
+      <div class="cleanup-button-container">
+        <button class="cleanup-large-button">Button 1</button>
+        <button class="cleanup-large-button">Button 2</button>
+      </div>
+    </div>
+  </div>
   
-  <img id="open-dialog" src="trash.png" width="256" height="256">
-  <div id="dialog" title="Confirmation" style="display:none;">
-  <p>לנקות???</p>
+  <img id="open-dialog" src="trash.png" width="256" height="256" onclick="openCleanupModal()">
+  
 </div>
 
 <script>
-$(document).ready(function() {
+function openCleanupModal() {
+  document.getElementById('myModal').style.display = 'block';
+}
+function closeCleanupModal() {
+  document.getElementById('myModal').style.display = 'none';
+}
 
-  $("#open-dialog").on("click", function() {
-  
-    $("#dialog").dialog({
-      modal: true,
-      buttons: {
-        "כן": function() {
-          // Handle OK button click
-          $(this).dialog("close");
-		  clear_pressed();
-        },
-        "לא": function() {
-          // Handle Cancel button click
-          $(this).dialog("close");		  
-        }
-      }
-    });
-    $("#dialog").show(); // show the dialog box after it is created
-  });
-});
 </script>
 
 
