@@ -14,10 +14,11 @@
 .cleanup-modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
+  padding: 40px;
   border: 1px solid #888;
   width: 80%;
   text-align: center;
+  height: 60%;
 }
 
 .cleanup-close {
@@ -38,14 +39,15 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
+  height: 60%;
 }
 
 .cleanup-large-button {
-  padding: 15px 30px;
-  font-size: 20px;
+  padding: 30px 60px;
+  font-size: 40px; /* Doubled font size */
 }
 
 .cleanup-large-text {
-  font-size: 30px;
+  font-size: 60px; /* Doubled font size */
   margin-bottom: 20px;
 }
