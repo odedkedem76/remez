@@ -171,8 +171,8 @@ button {
       <span class="cleanup-close" onclick="closeCleanupModal()">&times;</span>
       <div class="cleanup-large-text">לנקות???</div>
       <div class="cleanup-button-container">
-        <button class="cleanup-large-button">Button 1</button>
-        <button class="cleanup-large-button">Button 2</button>
+	    <button class="cleanup-large-button" onclick="clear_pressed()">נקה!!</button>
+        <button class="cleanup-large-button" onclick="closeCleanupModal()">ביטול</button>        
       </div>
     </div>
   </div>
@@ -187,6 +187,16 @@ function openCleanupModal() {
 }
 function closeCleanupModal() {
   document.getElementById('myModal').style.display = 'none';
+}
+
+function clear_pressed() {
+			
+	localStorage.clear();
+    location.reload();
+	
+	closeCleanupModal();
+	alert("ניקיתי!!!");
+			
 }
 
 </script>
@@ -299,14 +309,7 @@ for (var i = 0; i < textInputs.length; i++) {
 
 
 
-function clear_pressed() {
-			
-	localStorage.clear();
-    location.reload();
-	
-	alert("ניקיתי!!!");
-			
-}
+
 
 function manualCheck(id) {
 		var checkbox = document.getElementById(id);
