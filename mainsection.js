@@ -1,3 +1,36 @@
+
+
+function create_single_section(template, csv, name){
+	
+	// Split the CSV data into lines
+		var lines = csv.split('\n');
+		var html = '';
+
+		// Generate HTML based on the contents of the CSV data
+		for (var i = 0; i < lines.length; i++) {
+			var parts = lines[i].split(',');
+			var column1 = parts[0].trimStart();
+			var column2 = parts[1].trimStart();
+			var column3 = parts[2].trimStart();
+
+			// Replace placeholders in the section HTML with CSV data
+			var dynamicSection = section.replace(/AAA/g, column1)
+				.replace(/BBB/g, column2)
+				.replace(/CCC/g, column3);
+
+			html += dynamicSection;
+		}
+		
+		var res = "<fieldset style=\"border: 2px solid red; width: 95vw; position: relative\">\n";
+		res += "<legend style=\"font-size: 6rem;\">" + name + "</legend>\n";
+		res += html + "\n";
+		res += "</fieldset>";
+				
+		return res;
+	
+}
+
+
 var section = `
 <div id="mmAAA">
   <div class="unchecked">
@@ -16,19 +49,21 @@ var section = `
 <br><br>`;
 
 		// The CSV data string
-		var csvData = `5, green.png, גרין
+		var suspects = `5, green.png, גרין
 6, mustard.png, חרדלי
 7, orchid.png, אורכידאה
 8, rakia.png, רקיע
 9, plum.png, שזיפי
-10, shani.png, שני
-11, candlestick.png, פמוט
+10, shani.png, שני`;
+
+		var weapons = `11, candlestick.png, פמוט
 12, dagger.png, פגיון
 13, pipe.png, מוט ברזל
 14, gun.png, אקדח
 15, rope.png, חבל
-16, wrench.png, מפתח צינורות
-17, ballroom.jpg, אולם נשפים
+16, wrench.png, מפתח צינורות`;
+
+		var rooms = `17, ballroom.jpg, אולם נשפים
 18, billiard.jpg, חדר ביליארד
 19, greenhouse.jpg, חממה
 20, dining.jpg, חדר אוכל
@@ -38,27 +73,15 @@ var section = `
 24, salon.jpg, סלון
 25, workroom.jpg, חדר עבודה`;
 
-		// Split the CSV data into lines
-		var lines = csvData.split('\n');
-		var html = '';
 
-		// Generate HTML based on the contents of the CSV data
-		for (var i = 0; i < lines.length; i++) {
-			var parts = lines[i].split(',');
-			var column1 = parts[0].trimStart();
-			var column2 = parts[1].trimStart();
-			var column3 = parts[2].trimStart();
 
-			// Replace placeholders in the section HTML with CSV data
-			var dynamicSection = section.replace(/AAA/g, column1)
-				.replace(/BBB/g, column2)
-				.replace(/CCC/g, column3);
+var html = create_single_section(section,suspects,"חשודים") + "<br><br>";
+html += create_single_section(section,weapons,"נשקים") + "<br><br>";
+html += create_single_section(section,rooms,"חדרים") + "<br><br>";
+		
 
-			html += dynamicSection;
-		}
-
-		// Add the generated HTML to the page
-		document.getElementById('dynamic-content').innerHTML = html;
+// Add the generated HTML to the page
+document.getElementById('dynamic-content').innerHTML = html;
 		
 		
 		
