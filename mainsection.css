@@ -17,6 +17,7 @@
   .my-input {
     font-size: 5vw;
     width: 40%;
+	rows: 2
   }
 }
 
@@ -25,7 +26,7 @@
   /* 4 letter word takes 10% of screen width */
   .my-select {
     font-size: 5vw;
-    width: 20%;
+    width: 30%;
   }
 }
 
