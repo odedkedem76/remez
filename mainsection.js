@@ -41,7 +41,17 @@ var section = `
       <img src="images/x.png" >
     </div>
     <label for="lebAAA" class="my-label">CCC:</label>
-    <input type="text" id="lebAAA" name="lebAAA" class="my-input">
+	<select id="lebAAA" class="my-select">
+      <option value="1">לא יודע</option>
+      <option value="2">רמז</option>
+      <option value="3">אמא</option>
+	  <option value="4">אבא</option>
+	  <option value="5">א</option>
+	  <option value="6">ר</option>
+	  <option value="7">נ</option>
+	  <option value="8">!!!</option>
+    </select>
+    <input type="text"  name="lebAAA" class="my-input">
   </div>
 </div>
 <br><br>`;

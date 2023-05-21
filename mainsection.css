@@ -20,6 +20,15 @@
   }
 }
 
+/* adjust font size and width based on screen width */
+@media screen and (min-width: 400px) {
+  /* 4 letter word takes 10% of screen width */
+  .my-select {
+    font-size: 5vw;
+    width: 20%;
+  }
+}
+
 .main-img {
   width: 20%;
   aspect-ratio: 1 / 1;
