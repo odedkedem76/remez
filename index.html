@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="cleanup.css">
+	<link rel="stylesheet" type="text/css" href="mainsection.css">
 	
 	<style>
       
@@ -22,116 +23,13 @@
     font-size: 36px;
   }
   
-  .checkboxV {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  border: 1px solid black;
-  position: relative;
-}
-
-.checked .checkboxV:after {
-  content: "✔";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
-  line-height: 24px;
-  text-align: center;
-  background-color: white;
-  color: green;
-  font-weight: bold;
-  -webkit-text-stroke: 1px green;
-  font-size: 32px;
-}
+ 
 
 
 
-.unchecked .checkboxV:after {
-  content: "";
-  display: none;
-}
 
-button {
-			font-size: 24px;
-			padding: 12px 24px;
-		}
-		
-		.square {
-			position: relative;
-			  display: inline-block;
-			  width: 15vw;
-			  height: 15vw;
-			  border: 3px solid #ccc; /* add border */
-			  margin-right: 20px;
-			  margin-bottom: 20px;
-			  background-color: transparent; /* set background to transparent */
-			  cursor: pointer;
-		}
 
-		.square img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			cursor: pointer; /* add cursor */	
-		-webkit-user-select: none; /* Chrome, Safari, Opera */
-		-moz-user-select: none; /* Firefox */
-		-ms-user-select: none; /* IE 10+ */
-		user-select: none; /* Standard syntax */			
-		}
-		
-		
-		.my-label {
-  font-size: 4vw; /* default font size */
-}
 
-/* adjust font size based on screen width */
-@media screen and (min-width: 400px) {
-  /* 4 letter word takes 10% of screen width */
-  .my-label {
-    font-size: 6vw;
-  }
-}
-
-.my-input {
-  font-size: 4vw; /* default font size */
-  width: 80%; /* default width */
-}
-
-/* adjust font size and width based on screen width */
-@media screen and (min-width: 400px) {
-  /* 4 letter word takes 10% of screen width */
-  .my-input {
-    font-size: 5vw;
-    width: 40%;
-  }
-}
-
-.main-img {
-  width: 20%;
-  aspect-ratio: 1 / 1;
-}
-
-#dialog {
-    max-width: 100%;
-    width: auto !important;
-  }
-
-  #dialog p {
-    font-size: 16px;
-  }
-
-  .ui-dialog .ui-dialog-buttonpane .ui-button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
 
 	</style>
 
@@ -142,11 +40,10 @@ button {
   <h1>הרמז</h1>
   <br><br>
   
-   <fieldset style="border: 2px solid red; width: 95vw; position: relative">
-  <legend style="font-size: 6rem;">חשודים</legend>
+   
 
 
-</fieldset>
+
 
 
 
@@ -232,93 +129,7 @@ function clear_pressed() {
 	<br><br>
 
 
-<script>
-	
-	function toggleCheckboxState(checkboxDiv) {
-  if (checkboxDiv.classList.contains("unchecked")) {
-    checkboxDiv.classList.remove("unchecked");
-    checkboxDiv.classList.add("checked");
-	localStorage.setItem(checkboxDiv.id, "true");
-		
-  } else {
-    checkboxDiv.classList.remove("checked");
-    checkboxDiv.classList.add("unchecked");	
-	localStorage.setItem(checkboxDiv.id, "false");
-  }
-}
 
-
-      
-// Get all elements whose ID starts with "vvvv"
-var vvvvElements = document.querySelectorAll('[id^="vvvv"]');
-
-// Add event listener to each element
-vvvvElements.forEach(function(element) {
-  var id = element.id;  
-  var isChecked = localStorage.getItem(id);
-  // Set the checkbox state if it exists in local storage
-  if (isChecked === "true") {
-	element.classList.remove("unchecked");
-    element.classList.add("checked");
-  }
-  
-  element.addEventListener("click", function() { 
-    toggleCheckboxState(element); 
-  });
-});
-
-
-// Get all the checkbox input items in the page
-var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-// Iterate over all the checkbox input items and add the toggle function to them
-for (var i = 0; i < checkboxes.length; i++) {
-  var checkbox = checkboxes[i];
-  
-  var id = checkbox.id;
-  //alert("found id " + id);
-  
-  // Retrieve the checkbox state from local storage
-  var isChecked = localStorage.getItem(id);
-  // Set the checkbox state if it exists in local storage
-  if (isChecked === "true") {
-	document.getElementById(id).checked = true;
-  }
-  
-
-  // Add the toggle function to the checkbox input item
-  checkbox.addEventListener('change', function() {
-	localStorage.setItem(this.id, this.checked);	
-  });
-}
-
-// get all the text inputs
-var textInputs = document.querySelectorAll('input[type="text"]');
-for (var i = 0; i < textInputs.length; i++) {
-  var input = textInputs[i];
-  var id = input.id;
-  var txt = localStorage.getItem(id);
-  input.value = txt;
-  
-  // Add an event listener for the input event
-  input.addEventListener('input', function() {
-    localStorage.setItem(this.id, this.value);
-  });
-}
-
-
-
-
-
-
-function manualCheck(id) {
-		var checkbox = document.getElementById(id);
-		checkbox.checked = !checkbox.checked;
-		checkbox.dispatchEvent(new Event('change'));
-	}
-
-
-</script>
     
 </body>
 </html>

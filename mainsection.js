@@ -33,9 +33,7 @@ function create_single_section(template, csv, name){
 
 var section = `
 <div id="mmAAA">
-  <div class="unchecked">
-    <span class="checkboxV"></span>
-  </div>
+  
   
   <div style="display: flex; align-items: center; width: 100%; position: relative">  
     <img src="images/BBB" class="main-img">  
@@ -116,8 +114,14 @@ cbs.forEach((dv) => {
  rightimage.addEventListener('click', function() {  
   squareDiv.click();
 });
- 
-  
+
+var textbox = dv.querySelector('input[type="text"]');
+var textboxname = mainid + "-text";
+var txt = localStorage.getItem(textboxname);
+textbox.value = txt;
+textbox.addEventListener('input', function() {
+    localStorage.setItem(textboxname, this.value);
+  });
   
   
 });
