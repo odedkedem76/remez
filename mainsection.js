@@ -43,6 +43,7 @@ var section = `
     <label for="lebAAA" class="my-label">CCC:</label>
 	<select id="lebAAA" class="my-select">
       <option value="1">לא יודע</option>
+	  <option value="22">שלי</option>
       <option value="2">רמז</option>
       <option value="3">אמא</option>
 	  <option value="4">אבא</option>
@@ -51,7 +52,7 @@ var section = `
 	  <option value="7">נ</option>
 	  <option value="8">!!!</option>
     </select>
-    <input type="text"  name="lebAAA" class="my-input">
+    <textarea  name="lebAAA" class="my-input"></textarea>
   </div>
 </div>
 <br><br>`;
@@ -125,13 +126,41 @@ cbs.forEach((dv) => {
   squareDiv.click();
 });
 
-var textbox = dv.querySelector('input[type="text"]');
+//text box
+var textbox = dv.querySelector('textarea');
 var textboxname = mainid + "-text";
 var txt = localStorage.getItem(textboxname);
 textbox.value = txt;
 textbox.addEventListener('input', function() {
     localStorage.setItem(textboxname, this.value);
   });
+  
+//select
+var selectItem = dv.querySelector('select');
+var selectname = mainid + "-select";
+var savedval = localStorage.getItem(selectname);
+if (savedval !== null && savedval.length > 0) {
+    selectItem.value = savedval;
+}
+selectItem.addEventListener('change', function() {
+    localStorage.setItem(selectname, this.value);
+	if(this.value == "1"){
+		textbox.style.display = "block";
+		this.style.backgroundColor = 'white';
+	}	
+	else{
+		textbox.style.display = "none";
+		
+		if(this.value == "22"){
+			this.style.backgroundColor = 'lightgreen';
+		}else{
+			this.style.backgroundColor = 'lightgrey';
+		}			
+	}
+	
+	
+  });
+selectItem.dispatchEvent(new Event('change'));
   
   
 });

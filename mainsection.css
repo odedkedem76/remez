@@ -6,16 +6,13 @@
   }
 }
 
-.my-input {
-  font-size: 4vw; /* default font size */
-  width: 80%; /* default width */
-}
+
 
 /* adjust font size and width based on screen width */
 @media screen and (min-width: 400px) {
   /* 4 letter word takes 10% of screen width */
   .my-input {
-    font-size: 5vw;
+    font-size: 2vw;
     width: 40%;
 	rows: 2
   }
